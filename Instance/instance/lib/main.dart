@@ -1,80 +1,60 @@
+//Create a Flutter application that contains an image of a puppy and a button that increases the size of the puppy (double the size each time the button is pressed).
+
 import 'package:flutter/material.dart';
 
-void main()
-{
+void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget
-{
+class MyApp extends StatelessWidget {
   @override
-  _MyAppState createState()
-  {
-    return _MyAppState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ZoomImageScreen(),
+    );
   }
 }
 
-class _MyAppState extends State<MyApp>
-{
-  var _questionIndex = 0;
+class ZoomImageScreen extends StatefulWidget {
+  @override
+  _ZoomImageScreenState createState() => _ZoomImageScreenState();
+}
 
-  var _questions =[
-    "What color do you like the most?",
-    "What\'s your favourite weather?"
-  ];
+class _ZoomImageScreenState extends State<ZoomImageScreen> {
+  double _width = 200;
+  double _height = 200;
 
-  var _answers =[
-    ["Red","Green","Blue"],
-    ["Sunny","Rainy","Calm"]
-  ];
-
-  void _answerQuestions(String answer)
-  {
-    setState(()
-    {
-      if (_questionIndex < 2)
-      {
-        _questionIndex += _questionIndex; 
+  void _increaseSize() {
+    setState(() {
+      if (_width < 500) {
+        _width *= 2;
+        _height *= 2;
+      } else {
+        _width = 200;
+        _height = 200;
       }
     });
   }
 
   @override
-  Widget build(BuildContext context)
-  {
-    if (_questionIndex < 2)
-    {
-      return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(title: Text("Personality Test")),
-          body: Column(
-            children: [
-              Text(_questions[_questionIndex]),
-              ElevatedButton(
-                onPressed: () => _answerQuestions(_answers[_questionIndex][0]),
-                 child: Text(_answers[_questionIndex][0])
-                 ),
-              ElevatedButton(
-                onPressed: () => _answerQuestions(_answers[_questionIndex][1]),
-                 child: Text(_answers[_questionIndex][1])
-                 ),
-            ],
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Zoom in")),
+      body: Center(
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 300),
+          width: _width,
+          height: _height,
+          child: Image.network(
+            'https://picsum.photos/250?image=9',
+            fit: BoxFit.cover,
           ),
         ),
-      );
-    }
-    else
-    {
-      return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(title: Text("Liar Test")),
-          body: Column(
-            children: [
-              Text("We don't know anything about you, but the app looks great!!"),
-            ],
-          ),
-        )
-      );
-    }
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _increaseSize,
+        child: Icon(Icons.zoom_in),
+      ),
+    );
   }
 }
