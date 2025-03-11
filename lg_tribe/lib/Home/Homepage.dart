@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:lg_tribe/Country/country.dart";
 
 class Homepage extends StatelessWidget {
   @override
@@ -18,7 +19,7 @@ class Homepage extends StatelessWidget {
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "LG Management System",
@@ -36,29 +37,41 @@ class Homepage extends StatelessWidget {
                       ),
                     ),
                   ],
-                  )
-            ],
+                ),
+              ],
             ),
             Column(
               children: [
                 Padding(padding: EdgeInsets.all(10)),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute(builder: (context) => Country()));
+                  },
                   child: Text("Merchandiser"),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute(builder: (context) => Country()));
+                  },
                   child: Text("Promoter"),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute(builder: (context) => Country()));
+                  },
                   child: Text("Floor Service Provider"),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
               ],
-              )
+            ),
           ],
         ),
       ),
