@@ -6,6 +6,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,20 +17,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Homepage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('LG Tribe'),
-        backgroundColor: Colors.redAccent,
-      ),
-      body: Center(
-        child: Text(
-          "Welcome to LG Tribe!",
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
-    );
-  }
-}
+
