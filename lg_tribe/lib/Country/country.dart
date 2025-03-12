@@ -6,88 +6,97 @@ class Country extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage('assets/lg_tribe_logo.png'),
-                ),
-                Padding(padding: EdgeInsets.all(10)),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+        body: SafeArea(
+          top: true,
+          bottom: false,
+          left: true, 
+          right: true,
+          minimum:EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage('assets/lg_tribe_logo.png'),
+                  ),
+                  Padding(padding: EdgeInsets.all(10)),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Select Your Country",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.all(10)),
+                      Text(
+                        "Each Supported Country has it's own cases",
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w100,
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.all(10)),
+                    ],
+                  ),
+                ],
+              ),
+              Expanded(
+                child: ListView(
+                  padding: EdgeInsets.all(10),
                   children: [
-                    Text(
-                      "Select Your Country",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
+                    MaterialButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
+                      child: Text("Kenya"),
                     ),
-                    Padding(padding: EdgeInsets.all(10)),
-                    Text(
-                      "Each Supported Country has it's own cases",
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w100,
+                    MaterialButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
+                      child: Text("Ethopia"),
                     ),
-                    Padding(padding: EdgeInsets.all(10)),
+                    MaterialButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text("Tanzania"),
+                    ),
+                    MaterialButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text("Sudan"),
+                    ),
+                    MaterialButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text("Uganda"),
+                    ),
+                    MaterialButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text("Zambia"),
+                    ),
                   ],
                 ),
-              ],
-            ),
-            ListView(
-              padding: EdgeInsets.all(10),
-              children: [
-                MaterialButton(
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text("Kenya"),
-                ),
-                MaterialButton(
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text("Ethopia"),
-                ),
-                MaterialButton(
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text("Tanzania"),
-                ),
-                MaterialButton(
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text("Sudan"),
-                ),
-                MaterialButton(
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text("Uganda"),
-                ),
-                MaterialButton(
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text("Zambia"),
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );
