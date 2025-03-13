@@ -1,5 +1,6 @@
 import "package:country_flags/country_flags.dart";
 import "package:flutter/material.dart";
+import "package:lg_tribe/Login/login.Dart";
 
 class Country extends StatelessWidget {
   const Country({super.key});
@@ -54,7 +55,11 @@ class Country extends StatelessWidget {
                   padding: EdgeInsets.all(10),
                   children: [
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Login()),
+                          );
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -67,7 +72,7 @@ class Country extends StatelessWidget {
                             "KE",
                             shape: const Circle(),
                           ),
-                          Expanded(child: Text("Kenya")),
+                          Expanded(child: Text("     Kenya")),
                           Icon(Icons.arrow_forward_ios, size: 15),
                         ],
                       ),
@@ -86,7 +91,7 @@ class Country extends StatelessWidget {
                             "ET",
                             shape: const Circle(),
                           ),
-                          Expanded(child: Text("Ethopia")),
+                          Expanded(child: Text("     Ethopia")),
                           Icon(Icons.arrow_forward_ios, size: 15),
                         ],
                       ),
@@ -105,7 +110,7 @@ class Country extends StatelessWidget {
                             "TZ",
                             shape: const Circle(),
                           ),
-                          Expanded(child: Text("Tanzania")),
+                          Expanded(child: Text("     Tanzania")),
                           Icon(Icons.arrow_forward_ios, size: 15),
                         ],
                       ),
@@ -124,7 +129,7 @@ class Country extends StatelessWidget {
                             "SD",
                             shape: const Circle(),
                           ),
-                          Expanded(child: Text("Sudan")),
+                          Expanded(child: Text("     Sudan")),
                           Icon(Icons.arrow_forward_ios, size: 15),
                         ],
                       ),
@@ -143,7 +148,7 @@ class Country extends StatelessWidget {
                             "UG",
                             shape: const Circle(),
                           ),
-                          Expanded(child: Text("Uganda")),
+                          Expanded(child: Text("     Uganda")),
                           Icon(Icons.arrow_forward_ios, size: 15),
                         ],
                       ),
@@ -162,7 +167,7 @@ class Country extends StatelessWidget {
                             "ZM",
                             shape: const Circle(),
                           ),
-                          Expanded(child: Text("Zambia")),
+                          Expanded(child: Text("     Zambia")),
                           Icon(Icons.arrow_forward_ios, size: 15),
                         ],
                       ),

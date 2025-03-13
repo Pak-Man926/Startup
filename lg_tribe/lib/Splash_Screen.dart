@@ -26,6 +26,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Color(0xFF8B0000),
       body: SafeArea(
+        top: true,
+        bottom: false,
+        left: true,
+        right: true,
+        //minimum: EdgeInsets.all(30),
         child: Column(
           children: [
             Row(
@@ -33,6 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //Padding(padding: EdgeInsets.all(10)),
+                Padding(padding: EdgeInsets.only(top: 50) ),
                 CircleAvatar(
                   radius: 50,
                   backgroundImage: AssetImage('assets/lg_tribe_logo.png'),
@@ -44,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Padding(padding: EdgeInsets.all(80)),
                 Text(
-                  "Life's \n Good.",
+                  "Life's\nGood.",
                   style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
@@ -59,8 +65,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 Text(
                   "Please wait while the system initializes",
                   style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w100,
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
                     color: Colors.white,
                   ),
                 ),
