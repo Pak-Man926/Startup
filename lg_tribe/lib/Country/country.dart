@@ -2,6 +2,8 @@ import "package:country_flags/country_flags.dart";
 import "package:flutter/material.dart";
 
 class Country extends StatelessWidget {
+  const Country({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
