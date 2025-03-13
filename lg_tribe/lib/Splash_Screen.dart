@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Padding(padding: EdgeInsets.all(80)),
                 Text(
-                  "Life\'s \n Good.",
+                  "Life's \n Good.",
                   style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
