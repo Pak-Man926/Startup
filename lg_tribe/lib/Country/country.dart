@@ -1,3 +1,4 @@
+import "package:country_flags/country_flags.dart";
 import "package:flutter/material.dart";
 
 class Country extends StatelessWidget {
@@ -9,11 +10,11 @@ class Country extends StatelessWidget {
         body: SafeArea(
           top: true,
           bottom: false,
-          left: true, 
+          left: true,
           right: true,
-          minimum:EdgeInsets.all(20),
+          minimum: EdgeInsets.all(20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -55,42 +56,114 @@ class Country extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text("Kenya"),
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(width: 10),
+                          CountryFlag.fromCountryCode(
+                            "KE",
+                            shape: const Circle(),
+                          ),
+                          Expanded(child: Text("Kenya")),
+                          Icon(Icons.arrow_forward_ios, size: 15),
+                        ],
+                      ),
                     ),
                     MaterialButton(
                       onPressed: () {},
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text("Ethopia"),
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(width: 10),
+                          CountryFlag.fromCountryCode(
+                            "ET",
+                            shape: const Circle(),
+                          ),
+                          Expanded(child: Text("Ethopia")),
+                          Icon(Icons.arrow_forward_ios, size: 15),
+                        ],
+                      ),
                     ),
                     MaterialButton(
                       onPressed: () {},
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text("Tanzania"),
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(width: 10),
+                          CountryFlag.fromCountryCode(
+                            "TZ",
+                            shape: const Circle(),
+                          ),
+                          Expanded(child: Text("Tanzania")),
+                          Icon(Icons.arrow_forward_ios, size: 15),
+                        ],
+                      ),
                     ),
                     MaterialButton(
                       onPressed: () {},
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text("Sudan"),
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(width: 10),
+                          CountryFlag.fromCountryCode(
+                            "SD",
+                            shape: const Circle(),
+                          ),
+                          Expanded(child: Text("Sudan")),
+                          Icon(Icons.arrow_forward_ios, size: 15),
+                        ],
+                      ),
                     ),
                     MaterialButton(
                       onPressed: () {},
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text("Uganda"),
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(width: 10),
+                          CountryFlag.fromCountryCode(
+                            "UG",
+                            shape: const Circle(),
+                          ),
+                          Expanded(child: Text("Uganda")),
+                          Icon(Icons.arrow_forward_ios, size: 15),
+                        ],
+                      ),
                     ),
                     MaterialButton(
                       onPressed: () {},
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text("Zambia"),
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(width: 10),
+                          CountryFlag.fromCountryCode(
+                            "ZM",
+                            shape: const Circle(),
+                          ),
+                          Expanded(child: Text("Zambia")),
+                          Icon(Icons.arrow_forward_ios, size: 15),
+                        ],
+                      ),
                     ),
                   ],
                 ),
