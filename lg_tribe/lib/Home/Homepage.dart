@@ -45,31 +45,40 @@ class Homepage extends StatelessWidget {
             Column(
               children: [
                 Padding(padding: EdgeInsets.all(10)),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(
-                      context,
-                    ).push(MaterialPageRoute(builder: (context) => Country()));
-                  },
-                  child: Text("Merchandiser"),
+                SizedBox(
+                  width: 250,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(
+                        context,
+                      ).push(MaterialPageRoute(builder: (context) => Country()));
+                    },
+                    child: Text("Merchandiser"),
+                  ),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(
-                      context,
-                    ).push(MaterialPageRoute(builder: (context) => Country()));
-                  },
-                  child: Text("Promoter"),
+                SizedBox(
+                  width: 250,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(
+                        context,
+                      ).push(MaterialPageRoute(builder: (context) => Country()));
+                    },
+                    child: Text("Promoter"),
+                  ),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(
-                      context,
-                    ).push(MaterialPageRoute(builder: (context) => Country()));
-                  },
-                  child: Text("Floor Service Provider"),
+                SizedBox(
+                  width: 250,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(
+                        context,
+                      ).push(MaterialPageRoute(builder: (context) => Country()));
+                    },
+                    child: Text("Floor Service Provider"),
+                  ),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
               ],
