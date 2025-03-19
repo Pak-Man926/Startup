@@ -34,7 +34,7 @@ class _HomeState extends State<Home>
   {
     if (board[index] != "" || winner != "") return;
 
-    setState(
+    setState(()
     {
       board[index] = currentPlayer;
       if (_checkWinner(currentPlayer))
@@ -49,8 +49,7 @@ class _HomeState extends State<Home>
       {
         currentPlayer = currentPlayer == "X" ? "O" : "X";
       }
-    }
-    );
+    });
   }
 
   bool _checkWinner(String players)
@@ -65,6 +64,7 @@ class _HomeState extends State<Home>
       {
         return true;
       }
+    }
       if(board[0] == players && board[4] == players && board[8] == players)
       {
         return true;
@@ -73,7 +73,7 @@ class _HomeState extends State<Home>
       {
         return true;
       }
-    }
+    return false;
   }
 
   bool _checkDraw()
