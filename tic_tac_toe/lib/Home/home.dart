@@ -41,7 +41,7 @@ class _HomeState extends State<Home>
       {
         winner = currentPlayer;
       }
-      else if (!_checkDraw())
+      else if (_checkDraw())
       {
         isDraw = true;
       }
@@ -52,27 +52,28 @@ class _HomeState extends State<Home>
     });
   }
 
-  bool _checkWinner(String players)
+  bool _checkWinner(String player)
   {
-    for (int i =0; i<3; i++)
+    for (int i = 0; i<3; i++)
     {
-      if(board[i * 3] == players && board[1 * 3 + 1] == players && board[i * 3 + 2] == players)
+      if(board[i * 3] == player && board[i * 3 + 1] == player && board[ i * 3 + 2] == player)
       {
         return true;
       }
-      if(board[i] == players && board[i + 3] == players && board[i + 6] == players)
+      if (board[i] == player && board[i + 3] == player && board[i + 6] == player)
       {
         return true;
       }
     }
-      if(board[0] == players && board[4] == players && board[8] == players)
-      {
-        return true;
-      }
-      if(board[2] == players && board[4] == players && board[6] == players)
-      {
-        return true;
-      }
+    if (board[0] == player && board[4] == player && board[8] == player)
+    {
+      return true;
+    }
+    if(board[2] == player && board[4] == player && board[6] == player)
+    {
+      return true;
+    }
+
     return false;
   }
 
@@ -86,15 +87,16 @@ class _HomeState extends State<Home>
   {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tic Tac Toe"): 
+        centerTitle: true,
+        title: Text("Tic Tac Toe", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            winner != "" ? Text("Winner: $winner", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)) 
+            winner != "" ? Text("Winner: $winner", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)) 
             : isDraw ? 
-            const Text("Draw", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))
-            : Text("Current Player: $currentPlayer", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            const Text("Draw", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
+            : Text("Current Player: $currentPlayer", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
@@ -109,7 +111,7 @@ class _HomeState extends State<Home>
                       ),
                       child: MaterialButton(
                         onPressed: () => _handleTap(index),
-                        child: Text("board[index]", style: TextStyle(fontSize: 40))
+                        child: Text(board[index], style: TextStyle(fontSize: 40))
                         )
                     )
                   );
