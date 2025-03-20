@@ -203,6 +203,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.0"
+  phonenumber_input:
+    dependency: "direct main"
+    description:
+      name: phonenumber_input
+      sha256: "95ccd87ed2ee80c04d0954555efedc7284d3de3e9dd8e73564ccf0b87ffc53ca"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   sky_engine:
     dependency: transitive
     description: flutter

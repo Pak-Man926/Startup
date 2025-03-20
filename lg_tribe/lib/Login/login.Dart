@@ -22,6 +22,7 @@ class Login extends StatelessWidget {
               Positioned(
                 top: 250,
                 left: 20,
+                right: 20, // Ensure it doesn't overflow horizontally
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -32,25 +33,24 @@ class Login extends StatelessWidget {
                         fontWeight: FontWeight.w100,
                       ),
                     ),
-                    SizedBox(height: 30), // Spacing between text and input
-                     Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Phone Number:",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w100,
-                            ),
+                    SizedBox(height: 20), // Spacing between text and input
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Phone Number:",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w100,
                           ),
-                          TextField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              //hintText: 'Enter your phone number',
-                            ),
+                        ),
+                        SizedBox(height: 5), // Space between label and text field
+                        TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
                           ),
-                        ]
-                      )
+                        ),
+                      ],
                     ),
                   ],
                 ),
