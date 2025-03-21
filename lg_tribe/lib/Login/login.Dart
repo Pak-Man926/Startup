@@ -72,6 +72,20 @@ class Login extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Checkbox(
+                              value: false,
+                              onChanged: (bool? value) {},
+                            ),
+                            Text("Remeber me for 30 days"),
+                            //SizedBox(width: 20),
+                             Expanded(
+                                child: Text("Forgot Password?", style: TextStyle(color: Colors.red)),
+                               ),
+                          ],
+                        )
                       ],
                     ),
                   ],
