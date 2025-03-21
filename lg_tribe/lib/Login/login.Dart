@@ -73,19 +73,50 @@ class Login extends StatelessWidget {
                         ),
                         SizedBox(height: 5),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Checkbox(
-                              value: false,
-                              onChanged: (bool? value) {},
+                            Row(
+                              children: [
+                                Checkbox(
+                                  value: false,
+                                  onChanged: (bool? value) {},
+                                ),
+                                Text("Remember me for 30 days"),
+                              ]
                             ),
-                            Text("Remeber me for 30 days"),
-                            //SizedBox(width: 20),
-                             Expanded(
-                                child: Text("Forgot Password?", style: TextStyle(color: Colors.red)),
-                               ),
+                            Text("Forgot Password?", style: TextStyle(color: Colors.red)),
                           ],
-                        )
+                        ),
+                        SizedBox(height: 5),
+                        Column(
+              children: [
+                Padding(padding: EdgeInsets.all(10)),
+                SizedBox(
+                  width: double.infinity,
+                  child: MaterialButton(
+                    onPressed: (){},
+                    color: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(),
+                  ),
+                    child: Text("Sign In", style: TextStyle(color: Colors.white)),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(10)),
+                SizedBox(
+                  width: double.infinity,
+                  child: MaterialButton(
+                    onPressed: () {},
+                    color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(),
+                  ),
+                    child: Text("Sign in as different user", style: TextStyle(color: Colors.black)),
+                  ),
+                ),
+                
+              ],
+            ),
                       ],
                     ),
                   ],
