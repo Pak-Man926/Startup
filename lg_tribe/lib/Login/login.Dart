@@ -89,19 +89,19 @@ class Login extends StatelessWidget {
                         ),
                         SizedBox(height: 5),
                         Column(
-              children: [
-                Padding(padding: EdgeInsets.all(10)),
-                SizedBox(
-                  width: double.infinity,
-                  child: MaterialButton(
-                    onPressed: (){},
-                    color: Colors.red,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(),
-                  ),
-                    child: Text("Sign In", style: TextStyle(color: Colors.white)),
-                  ),
-                ),
+                          children: [
+                            Padding(padding: EdgeInsets.all(10)),
+                            SizedBox(
+                            width: double.infinity,
+                            child: MaterialButton(
+                              onPressed: (){},
+                              color: Colors.red,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(),
+                              ),
+                              child: Text("Sign In", style: TextStyle(color: Colors.white)),
+                            ),
+                          ),
                 Padding(padding: EdgeInsets.all(10)),
                 SizedBox(
                   width: double.infinity,
