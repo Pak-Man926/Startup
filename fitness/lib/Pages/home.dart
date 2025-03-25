@@ -1,41 +1,133 @@
+import 'package:fitness/Models/category_model.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class Homepage extends StatefulWidget 
+{
+  Homepage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  List <CategoryModel> categories = [];
+
+  void _getCategories()
+  {
+    categories = CategoryModel.getCategory();
+  }
+
+  // @override
+  // void initSate()
+  // {
+  //   _getCategories();
+  // }
+
+  @override
+  Widget build(BuildContext context) 
+  {
+    _getCategories();
+
     return Scaffold(
       appBar: appBar(),
+      backgroundColor: Colors.white,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            margin: EdgeInsets.only(top:40, left: 20, right: 20),
-            decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xff1D1617).withOpacity(0.11),
-                    blurRadius: 40,
-                    spreadRadius: 0.0
-                  )
-                ]
-               ),
-            child: TextField(
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              contentPadding: EdgeInsets.all(15),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide.none,
-              )
+          _searchField(),
+          SizedBox(height: 40),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text("Category",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                height: 150,
+                color: Colors.greenAccent,
+                child: ListView.builder(
+                  itemCount: categories.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (Context, index)
+                  {
+                    return Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: categories[index].boxColor,
+                      )
+                    ); 
+                  }
+                )
+              ),
+                
+            ]
+          ),
+        ],
+      )
+    );
+  }
+
+  Column _searchField() {
+    return Column(
+      children: [
+        Container(
+          margin: EdgeInsets.only(top:40, left: 20, right: 20),
+          decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0xff1D1617).withOpacity(0.11),
+                  blurRadius: 40,
+                  spreadRadius: 0.0
+                )
+              ]
+             ),
+          child: TextField(
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            contentPadding: EdgeInsets.all(15),
+            hintText: "Search for recipes",
+            hintStyle: TextStyle(
+              color: Color(0xffDDDADA),
+              fontSize: 14,
+            ),
+            prefixIcon: Icon(Icons.search),
+            suffixIcon: Container(
+              width: 100,
+              child: IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    VerticalDivider(
+                      color: Colors.black,
+                      thickness: 0.1,
+                      indent: 10,
+                      endIndent: 10,
+                    ),
+                    Icon(Icons.filter_list),
+                  ],
+                ),
+              ),
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide.none,
             )
           )
-          )
-        ],
         )
-    );
+        )
+      ],
+      );
   }
 
   AppBar appBar() {
