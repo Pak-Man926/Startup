@@ -52,19 +52,32 @@ class _HomepageState extends State<Homepage> {
               ),
               SizedBox(height: 20),
               Container(
-                height: 150,
-                color: Colors.greenAccent,
-                child: ListView.builder(
+                height: 120,
+                child: ListView.separated(
                   itemCount: categories.length,
                   scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 20, right: 20),
+                  separatorBuilder: (context, index) => SizedBox(width: 25),
                   itemBuilder: (Context, index)
                   {
                     return Container(
-                      height: 50,
-                      width: 50,
+                      width: 100,
                       decoration: BoxDecoration(
-                        color: categories[index].boxColor,
-                      )
+                        color: categories[index].boxColor.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                          )
+                        ],
+                        )
                     ); 
                   }
                 )
