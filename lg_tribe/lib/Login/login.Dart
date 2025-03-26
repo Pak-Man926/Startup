@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lg_tribe/Country/country.dart';
 import 'package:phonenumber_input/phonenumber_input.dart';
+import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -84,7 +85,15 @@ class Login extends StatelessWidget {
                                 Text("Remember me for 30 days"),
                               ]
                             ),
-                            Text("Forgot Password?", style: TextStyle(color: Colors.red)),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Password()),
+                                );
+                              },
+                              child: Text("Forgot Password?",style: TextStyle(color: Colors.red)),
+                            ),
                           ],
                         ),
                         SizedBox(height: 5),
