@@ -71,7 +71,7 @@ class Password extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 15),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -79,10 +79,20 @@ class Password extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => Login()),
                     );
                   },
-                  icon:Icon(Icons.arrow_back, color: Colors.white),
-                  child: const Text(
-                    "Back to login",
-                    style: TextStyle(color: Colors.white),
+                  child: Row(
+                    // Wrap in Row to align horizontally
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.arrow_back,
+                        color:  const Color.fromARGB(255, 143, 141, 141)
+                      ), // Changed icon color for visibility
+                      SizedBox(width: 5), // Adds spacing between icon and text
+                      Text(
+                        "Back to login",
+                        style: TextStyle(color: const Color.fromARGB(255, 143, 141, 141)),
+                      ),
+                    ],
                   ),
                 ),
               ],
