@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Login/login.Dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Password extends StatelessWidget {
   const Password({super.key});
@@ -21,10 +22,16 @@ class Password extends StatelessWidget {
                   alignment: Alignment.center,
                   padding: const EdgeInsets.all(20),
                   decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 175, 76, 92),
+                    color: Color.fromARGB(255, 235, 184, 192),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.key, size: 50, color: Colors.white),
+                  child: SvgPicture.asset(
+                    "assets/key-svgrepo-com.svg",
+                    width: 20, // Adjust size as needed
+                    height: 20,
+                    fit: BoxFit.contain,
+                    color: Colors.white,
+                  ),
                 ),
                 const SizedBox(height: 40),
                 const Text(
@@ -85,12 +92,14 @@ class Password extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.arrow_back,
-                        color:  const Color.fromARGB(255, 143, 141, 141)
+                        color: const Color.fromARGB(255, 143, 141, 141),
                       ), // Changed icon color for visibility
                       SizedBox(width: 5), // Adds spacing between icon and text
                       Text(
                         "Back to login",
-                        style: TextStyle(color: const Color.fromARGB(255, 143, 141, 141)),
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 143, 141, 141),
+                        ),
                       ),
                     ],
                   ),
