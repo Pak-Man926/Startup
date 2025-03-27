@@ -27,8 +27,8 @@ class Password extends StatelessWidget {
                   ),
                   child: SvgPicture.asset(
                     "assets/key-svgrepo-com.svg",
-                    width: 20, // Adjust size as needed
-                    height: 20,
+                    width: 50, // Adjust size as needed
+                    height: 50,
                     fit: BoxFit.contain,
                     color: Colors.white,
                   ),
