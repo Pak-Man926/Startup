@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:phonenumber_input/phonenumber_input.dart";
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class Password extends StatelessWidget {
   const Password({super.key});
@@ -33,7 +34,7 @@ class Password extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                "No worries, we\'ll send in your reset instructions",
+                "No worries, we'll send in your reset instructions",
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w100),
               ),
               SizedBox(height: 20),
@@ -52,14 +53,16 @@ class Password extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
-                    child: PhoneNumberInput(
-                      labelText: "Phone Number",
-                      onCountryCodeChanged: (code) {
-                        print('Country code changed: $code');
+                    child: InternationalPhoneNumberInput(
+                      onInputChanged: (PhoneNumber number) {
+                        print(number.phoneNumber);
                       },
-                      onPhoneNumberChanged: (phoneNumber) {
-                        print('Phone number changed: $phoneNumber');
+                      onInputValidated: (bool value) {
+                        print(value);
                       },
+                      selectorConfig: SelectorConfig(
+                        selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                      ),
                     ),
                   ),
                 ],
