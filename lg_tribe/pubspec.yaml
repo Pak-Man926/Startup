@@ -36,7 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   country_flags: ^3.0.0
   phonenumber_input: ^0.0.3
-  intl_phone_number_input: ^0.7.4
+  intl_phone_field: ^3.1.0
+  libphonenumber_web: 0.3.2
 
 dev_dependencies:
   flutter_test:

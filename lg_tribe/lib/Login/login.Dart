@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lg_tribe/Country/country.dart';
-import 'package:phonenumber_input/phonenumber_input.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
 
 class Login extends StatelessWidget {
@@ -39,29 +39,30 @@ class Login extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Text(
-                        //   "Phone Number:",
-                        //   style: TextStyle(
-                        //     fontSize: 12,
-                        //     fontWeight: FontWeight.w100,
-                        //   ),
-                        //),
+                        Text(
+                          "Phone Number:",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         SizedBox(height: 5), // Space between label and text field
-                        PhoneNumberInput(
-                          labelText: "Phone Number",
-                          onCountryCodeChanged: (code) {
-                            print('Country code changed: $code');
-                            },
-                          onPhoneNumberChanged: (phoneNumber) {
-                          print('Phone number changed: $phoneNumber');
-                            },
+                        IntlPhoneField(
+                          decoration: const InputDecoration(
+                            hintText: "Enter your phone number",
+                            border: OutlineInputBorder(),
+                          ),
+                          initialCountryCode: 'KE',
+                          // onChanged: (phone) {
+                          //   print(phone.completeNumber);
+                         // },
                         ),
                         SizedBox(height: 5),
                         Text(
                           "Password:",
                           style: TextStyle(
                             fontSize: 12,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                         SizedBox(height: 5),

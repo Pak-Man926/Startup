@@ -73,14 +73,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
-  equatable:
-    dependency: transitive
-    description:
-      name: equatable
-      sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.7"
   fake_async:
     dependency: transitive
     description:
@@ -128,14 +120,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.2"
-  intl_phone_number_input:
+  intl_phone_field:
     dependency: "direct main"
     description:
-      name: intl_phone_number_input
-      sha256: "1c4328713a9503ab26a1fdbb6b00b4cada68c18aac922b35bedbc72eff1297c3"
+      name: intl_phone_field
+      sha256: "73819d3dfcb68d2c85663606f6842597c3ddf6688ac777f051b17814fe767bbf"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.4"
+    version: "3.2.0"
   jovial_misc:
     dependency: transitive
     description:
@@ -192,16 +184,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.2"
-  libphonenumber_plugin:
-    dependency: transitive
-    description:
-      name: libphonenumber_plugin
-      sha256: c615021d9816fbda2b2587881019ed595ecdf54d999652d7e4cce0e1f026368c
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.3"
   libphonenumber_web:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: libphonenumber_web
       sha256: "8186f420dbe97c3132283e52819daff1e55d60d6db46f7ea5ac42f42a28cc2ef"
