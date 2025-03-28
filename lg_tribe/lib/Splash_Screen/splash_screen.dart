@@ -24,8 +24,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF8B0000),
-      body: splashScreen(),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/LG_Electronics_Background.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: splashScreen(),
+      )
+      
     );
   }
 
