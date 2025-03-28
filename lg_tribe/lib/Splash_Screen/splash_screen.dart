@@ -32,8 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ),
         child: splashScreen(),
-      )
-      
+      ),
     );
   }
 
@@ -51,10 +50,19 @@ class _SplashScreenState extends State<SplashScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //Padding(padding: EdgeInsets.all(10)),
-              Padding(padding: EdgeInsets.only(top: 50) ),
-              CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage('assets/lg_tribe_logo.png'),
+              Padding(padding: EdgeInsets.only(top: 50)),
+              Container(
+                width: 100, // Diameter of CircleAvatar (2 * radius)
+                height: 100,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage('assets/LGE_Logo_Mono_White_RGB.png'),
+                    fit:
+                        BoxFit
+                            .scaleDown, // Ensures the image covers the circle fully
+                  ),
+                ),
               ),
             ],
           ),
